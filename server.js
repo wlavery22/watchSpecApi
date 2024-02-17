@@ -13,8 +13,6 @@ app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
 });
 
-// app.locals.pets = [];
-
 app.locals.watches = [
   { id: 'a1', name: 'Alpinist', type: 'field watch', maker: 'Seiko', cost: "$700", complications: "date" },
   { id: 'b2', name: 'Cocktail Time', type: 'dress watch', maker: 'Seiko', cost: "$400", complications: "date" },
