@@ -14,16 +14,20 @@ app.listen(app.get('port'), () => {
 });
 
 app.locals.watches = [
-  { id: 'a1', name: 'Alpinist', type: 'field watch', maker: 'Seiko', cost: "$700", complications: "date" },
-  { id: 'b2', name: 'Cocktail Time', type: 'dress watch', maker: 'Seiko', cost: "$400", complications: "date" },
-  { id: 'c3', name: 'Dress KX', type: 'casual', maker: 'Seiko', cost: "$300", complications: "date" },
-  { id: 'd4', name: 'B09', type: 'chronograph', maker: 'Brietling', cost: "$9k", complications: "chronograph" },
+  { id: 'a1', name: 'Alpinist', type: 'field watch', maker: 'Seiko', cost: "$700", complications: "date", size: "39mm" },
+  { id: 'a1', name: 'Seiko 5 GMT', type: 'sports watch', maker: 'Seiko', cost: "$400", complications: "GMT", size: "39mm" },
+  { id: 'a1', name: 'Seiko Monster', type: 'dive watch', maker: 'Seiko', cost: "$400", complications: "day date", size: "42mm" },
+  { id: 'a1', name: 'Seiko Turtle', type: 'dive watch', maker: 'Seiko', cost: "$400", complications: "day date", size: "45mm" },
+  { id: 'b2', name: 'Cocktail Time', type: 'dress watch', maker: 'Seiko', cost: "$400", complications: "date", size: '40mm' },
+  { id: 'c3', name: 'Dress KX', type: 'casual', maker: 'Seiko', cost: "$300", complications: "date", size: "40mm" },
+  { id: 'd4', name: 'Premier B09', type: 'pilot\'s watch', maker: 'Brietling', cost: "$9000", complications: "chronograph", size: "40mm" },
+  { id: 'd4', name: 'Navitimer B01', type: 'pilot\'s watch', maker: 'Brietling', cost: "$9000", complications: "chronograph", size: "41mm" },
   { id: 'e5', name: 'Khaki Field Auto', type: 'field watch', maker: 'Hamilton', cost: "$700", complications: "date" },
   { id: 'f6', name: 'Khaki Field King Auto', type: 'field watch', maker: 'Hamilton', cost: "$700", complications: "day date" },
   { id: 'g7', name: 'Khaki Field Murph 38mm', type: 'field watch', maker: 'Hamilton', cost: "$900", complications: "seconds hand" },
-  { id: 'h8', name: 'Intra-Matic Auto Chrono', type: 'chronograph', maker: 'Hamilton', cost: "$2.3k", complications: "chronograph" }, 
+  { id: 'h8', name: 'Intra-Matic Auto Chrono', type: 'chronograph', maker: 'Hamilton', cost: "$2300", complications: "chronograph" }, 
   { id: 'i9', name: 'Max Bill', type: 'casual', maker: 'Junghans', cost: "$900", complications: "seconds hand" },
-  { id: 'j10', name: 'Meister Chronoscope', type: 'chronograph', maker: 'Junghans', cost: "$2.4k", complications: "day date chronograph" }
+  { id: 'j10', name: 'Meister Chronoscope', type: 'chronograph', maker: 'Junghans', cost: "$2400", complications: "day date chronograph" }
 ];
 
 app.get('/api/v1/watches', (request, response) => {
