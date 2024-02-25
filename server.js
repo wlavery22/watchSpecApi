@@ -56,18 +56,18 @@ app.post('/api/v1/watches', (request, response) => {
   const id = Date.now();
   const watch = request.body;
 
-  for (let requiredParameter of ['name', 'type', 'maker', 'cost', 'complications']) {
+  for (let requiredParameter of ['name', 'type', 'maker', 'cost', 'complications', 'features', 'size']) {
     if (!watch[requiredParameter]) {
       response
         .status(422)
-        .send({ error: `Expected format: { name: <String>, type: <String>, maker: <String>, cost: <String>, complications: <String> }. You're missing a "${requiredParameter}" property.` });
+        .send({ error: `Expected format: { name: <String>, type: <String>, maker: <String>, cost: <String>, complications: <String>, features: <String>, size: <String> }. You're missing a "${requiredParameter}" property.` });
       return
     }
   }
 
-  const { name, type, maker, cost, complications } = watch;
-  app.locals.watches.push({ name, type, id, maker, cost, complications });
-  response.status(201).json({ name, type, id, maker, cost, complications });
+  const { name, type, maker, cost, complications, features, size } = watch;
+  app.locals.watches.push({ name, type, id, maker, cost, complications, features, size });
+  response.status(201).json({ name, type, id, maker, cost, complications, features, size });
 });
 
 app.delete('/api/v1/watches/:id', (request, response) => {
@@ -91,19 +91,19 @@ app.put('/api/v1/watches/:id', (request, response) => {
     return response.sendStatus(404);
   }
 
-  for (let requiredParameter of ['name', 'type', 'maker', 'cost', 'complications']) {
+  for (let requiredParameter of ['name', 'type', 'maker', 'cost', 'complications', 'features', 'size']) {
     if (!watch[requiredParameter]) {
       response
         .status(422)
-        .send({ error: `Expected format: { name: <String>, type: <String>, maker: <String>, cost: <String>, complications: <String> }. You're missing a "${requiredParameter}" property.` });
+        .send({ error: `Expected format: { name: <String>, type: <String>, maker: <String>, cost: <String>, complications: <String>, features: <String>, size: <String> }. You're missing a "${requiredParameter}" property.` });
       return;
     }
   }
  
-  const { name, type, maker, cost, complications } = watch;
-  app.locals.watches[index] = { ...app.locals.watches[index], name, type, maker, cost, complications };
+  const { name, type, maker, cost, complications, features, size } = watch;
+  app.locals.watches[index] = { ...app.locals.watches[index], name, type, maker, cost, complications, features, size };
 
-  response.status(200).json({ name, type, id, maker, cost, complications });
+  response.status(200).json({ name, type, id, maker, cost, complications, features, size });
 });
 
 
