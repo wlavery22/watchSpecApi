@@ -1,5 +1,7 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.set('port', process.env.PORT || 3000);
@@ -105,5 +107,5 @@ app.put('/api/v1/watches/:id', (request, response) => {
 
   response.status(200).json({ name, type, id, maker, cost, complications, features, size });
 });
-
+ 
 
