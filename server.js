@@ -4,7 +4,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 20223);
 app.locals.title = 'Watch Spec';
 
 app.get('/', (request, response) => {
